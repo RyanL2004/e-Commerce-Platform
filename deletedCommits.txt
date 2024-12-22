@@ -1,0 +1,34 @@
+Previous Commits deleted after --force push:
+1-Initial Commit:
+Add basic project structure and initial files.
+
+2-Add Dependencies:
+Add package.json and package-lock.json with necessary dependencies.
+
+
+3-Add Environment Configuration:
+Add .env file for environment variables.
+
+4-Add User Model:
+Add User model with schema definition.
+
+5-Add Product and Review Models:
+Add Product and Review models with schema definitions.
+
+6-Add Seed Data:
+Add seed data for users and products.
+
+7-Add Database Seeder:
+Add databaseSeeder.js to seed the database with initial data.
+
+8-Add Express Server Setup:
+Add index.js to set up the Express server and connect to the database.
+
+9-Add Git Ignore:
+Add .gitignore file to exclude node_modules and other unnecessary files.
+
+10-Update Package Scripts:
+Update package.json scripts for starting the server.
+
+11-Fix and Clean Up Code:
+Fix any typos, clean up code, and ensure everything is working correctly.
