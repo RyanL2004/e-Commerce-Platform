@@ -17,17 +17,15 @@ mongoose.connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.error("db connection error:", err));
 
 const databaseSeeder = require('./databaseSeeder');
-
 // Database seeder routes
 app.use('/api/seed', databaseSeeder);
 
+//Connect to Port
 app.listen(PORT, () => {
   console.log(`server listening on port ${PORT}`);
 });
 
-// Test route
+// Test Product route
 // app.get("/api/products", (req, res) => {
 //   res.json(products);
 // });
-
-// Product route

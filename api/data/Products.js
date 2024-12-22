@@ -1,7 +1,7 @@
 const products = [
     {
         
-        
+        //LAA Basic template post-production
         name: "Lorem anim anim",
         image:
           "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/52c951e30dcb4ff1bfdfd053405a6f75_9366/Samba_Shoes_Green_IG1243_01_standard.jpg",
