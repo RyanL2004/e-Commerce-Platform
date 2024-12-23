@@ -10,4 +10,11 @@ const userSchema = new mongoose.Schema({
 },{ timestamps: true}
 );
 
+//validate password match or not 
+userSchema.methods.matchPassword = async function (enterPassword) {
+    return await bcrypt.compare(enterPassword, this.password)
+
+    
+}
+
 module.exports = mongoose.model('User', userSchema);
