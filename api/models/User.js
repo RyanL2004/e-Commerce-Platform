@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
 );
 
 //validate password match or not 
+// Creating custom mongoose matchPassword method for check
 userSchema.methods.matchPassword = async function (enterPassword) {
     return await bcrypt.compare(enterPassword, this.password)
 
