@@ -3,6 +3,7 @@ const userRoute = express.Router();
 const AsynHandler = require('express-async-handler');
 const User = require('../models/User');
 const generateToken = require('../tokenGenerate');
+const protect = require('../middleware/Auth');
 
 
 userRoute.post('/login', AsynHandler(async(req, res)=>{
@@ -63,7 +64,7 @@ userRoute.post('/',AsynHandler(async (req,res)=>{
 )
 
 //profile data
-userRoute.get("/profile", AsynHandler(async(res, rep)=>{
+userRoute.get("/profile", protect, AsynHandler(async(req, res)=>{
     const user = await User.findById(req.user._id)
     if(user){
         res.json({
