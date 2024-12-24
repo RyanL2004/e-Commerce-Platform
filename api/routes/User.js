@@ -61,4 +61,22 @@ userRoute.post('/',AsynHandler(async (req,res)=>{
     
 })
 )
+
+//profile data
+userRoute.get("/profile", AsynHandler(async(res, rep)=>{
+    const user = await User.findById(req.user._id)
+    if(user){
+        res.json({
+            _id: user.id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            createdAt: user.createdAt,
+        });
+    }else{
+        res.status(404);
+        throw new error("User not found")
+
+    }
+}))
 module.exports = userRoute;
