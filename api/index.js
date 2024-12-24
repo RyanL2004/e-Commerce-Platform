@@ -16,6 +16,7 @@ mongoose.connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("db connected"))
   .catch((err) => console.error("db connection error:", err));
 
+  
 const databaseSeeder = require('./databaseSeeder');
 const userRoute = require('./routes/User')
 // Database seeder routes
