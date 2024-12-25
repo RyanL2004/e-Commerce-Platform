@@ -20,6 +20,7 @@ mongoose.connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
 const databaseSeeder = require('./databaseSeeder');
 const userRoute = require('./routes/User');
 const productRoute = require("./routes/Product");
+const orderRoute = require("./routes/Order");
 // Database seeder routes
 app.use('/api/seed', databaseSeeder);
 
@@ -28,6 +29,9 @@ app.use('/api/users', userRoute);
 
 //Products routes
 app.use('/api/products', productRoute);
+
+//Orders Routes
+app.use('/api/orders', orderRoute);
 
 
 
