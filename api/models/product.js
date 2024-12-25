@@ -7,8 +7,11 @@ const reviewSchema = mongoose.Schema(
         rating: { type: Number, required: true },
         comment: { type: String, required: true },
         user: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "User" }
-        //user prividing a review
+        //user providing a review
     },
+    {
+        timestamps: true
+    }
 
 )
 
@@ -22,14 +25,15 @@ const productSchema = mongoose.Schema(
         CountInStock: { type: Number, required: true, default: 0 },
         rating: { type: Number, required: true , default: 0},
         numReview: { type: Number, required: true , default: 0},
-        category: { type: String, required: true },
 
         reviews: [reviewSchema],
     
+    },
+    {
+        timestamps: true
     }
 );  
 
 const Product = mongoose.model("Product", productSchema);
-const Review = mongoose.model("Review", reviewSchema);
 
-module.exports = { Product, Review };
+module.exports = Product;

@@ -27,7 +27,7 @@ app.use('/api/seed', databaseSeeder);
 app.use('/api/users', userRoute);
 
 //Products routes
-app.use('./api/products', productRoute);
+app.use('/api/products', productRoute);
 
 
 
