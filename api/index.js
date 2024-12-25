@@ -12,7 +12,7 @@ const MONGODB = process.env.MONGODB;
 app.use(express.json());
 
 // Connect to the database
-mongoose.connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGODB) 
   .then(() => console.log("db connected"))
   .catch((err) => console.error("db connection error:", err));
 
