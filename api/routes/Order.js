@@ -49,6 +49,7 @@ orderRoute.put('/:id/payment', protect, asyncHandler(async(req, res)=>{
             email_address: req.body.email_address
         }
         const updateOrder = order.save();
+        console.log(updateOrder);
         res.json(updateOrder);
     }else{
         res.status(404);
