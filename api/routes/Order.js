@@ -56,4 +56,24 @@ orderRoute.put('/:id/payment', protect, asyncHandler(async(req, res)=>{
         throw new Error('Order not found');
     }
 }))
+
+orderRoute.get('/', protect, asyncHandler(async(req, res) => {
+    const orders = await Order.find({user:req.user._id}).sort({ _id: -1 });
+    if (orders) {
+        res.status(200).json(orders);
+    }else {
+        res.status(404);
+        throw new Error('Orders not found')
+    }
+
+}))
+orderRoute.get('./:id', protect,asyncHandler(async(req, res)=>{
+    const order = await Order.findById(req.params.id).populate("user", "email");
+    if(order){
+        res.json(order);
+    }else{
+        res.status(404);
+        throw new Error('Order not found');
+    }
+}) )
 module.exports = orderRoute;
