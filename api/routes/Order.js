@@ -48,7 +48,7 @@ orderRoute.put('/:id/payment', protect, asyncHandler(async(req, res)=>{
             update_time: req.body.update_time,
             email_address: req.body.email_address
         }
-        const updateOrder = order.save();
+        const updateOrder = await order.save();
         console.log(updateOrder);
         res.json(updateOrder);
     }else{
