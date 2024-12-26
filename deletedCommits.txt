@@ -5,7 +5,6 @@ Add basic project structure and initial files.
 2-Add Dependencies:
 Add package.json and package-lock.json with necessary dependencies.
 
-
 3-Add Environment Configuration:
 Add .env file for environment variables.
 
