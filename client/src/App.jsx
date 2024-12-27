@@ -1,8 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import Navbar from "./Layouts/Navbar";
-import Footer from "./Layouts/Footer";
 import Layout from "./Layouts/Layouts";
 import "./App.css";
 
