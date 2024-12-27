@@ -17,7 +17,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route exact path ="/" element={App}>
+        <Route exact path ="/" element={<App />}>
         {console.log(App)}
 
         </Route>
