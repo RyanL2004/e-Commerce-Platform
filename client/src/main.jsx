@@ -18,6 +18,7 @@ root.render(
     <Router>
       <Routes>
         <Route exact path ="/" element={App}>
+        {console.log(App)}
 
         </Route>
         
