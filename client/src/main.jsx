@@ -10,6 +10,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import ProductDetail from './pages/ProductDetail';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -17,10 +18,8 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route exact path ="/" element={<App />}>
-        {console.log(App)}
-
-        </Route>
+        <Route exact path ="/" element={<App />}> {console.log(App)} </Route>
+        <Route exact path ="/detail" element={<ProductDetail/>}> </Route>
         
       </Routes>
     </Router>
