@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const app = express();
 dotenv.config();
 
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT;
+const cors = require("cors");
 const MONGODB = process.env.MONGODB;
 
 // Middleware to parse JSON
@@ -21,6 +22,9 @@ const databaseSeeder = require('./databaseSeeder');
 const userRoute = require('./routes/User');
 const productRoute = require("./routes/Product");
 const orderRoute = require("./routes/Order");
+
+app.use(express.json());
+app.use(cors());
 // Database seeder routes
 app.use('/api/seed', databaseSeeder);
 
