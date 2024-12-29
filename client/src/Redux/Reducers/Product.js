@@ -10,16 +10,51 @@ import {
 }
 from '../Constants/Products'
 
-export const productListReducer = (state = { products:[], action}) => {
+//List of products available
+export const productListReducer = (state = { products:[]}, action) => {
     switch (action.type) {
         case PRODUCT_LIST_REQ:
             return {loading : true, products:[]
 
             };
         case PRODUCT_LIST_REQ_SUCCESS:
-            return {loading : false,
+            return {
+                 loading : false,
                  products: action.payload.products,
-                 totalPage:action.payload.totalPage
+                 totalPage:action.payload.totalPage,
+                 page: action.payload.page,
             };
+        case PRODUCT_LIST_REQ_FAIL:
+            return {
+                 loading : false,
+                 error: action.payload.error
+            }
+        default:
+            return state;
+    }
+}
+
+//list of the single product
+export const productReducer = (state = {product: {reviews: []}}, action) => {
+    switch (action.type) {
+        case PRODUCT_DETAIL_REQ:
+            return {
+                loading: true,
+                ...state
+
+            };
+        case PRODUCT_DETAIL_REQ_SUCCESS:
+            return {
+                loading: false,
+                product: action.payload,
+            };
+        case PRODUCT_DETAIL_REQ_FAIL:
+            return {
+                loading: false,
+                error: action.payload.error
+            };
+        default:
+            return state;
+
     }
 }
