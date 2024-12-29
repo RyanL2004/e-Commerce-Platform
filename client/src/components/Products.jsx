@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { productListAction } from "../Redux/Actions/Product";
+import "./Products.css"; // Import custom CSS
 
 const Products = () => {
   const dispatch = useDispatch();
