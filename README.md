@@ -91,6 +91,33 @@ e-Commerce-Platform/
 └── webpack.config.js  # Webpack configuration
 ```
 
+## 📦 Installation
+
+To set up the project locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/RyanL2004/e-Commerce-Platform.git
+   ```
+2. **Navigate to the project directory**:
+   ```bash
+   cd e-Commerce-Platform
+   ```
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+4. **Set up environment variables**:
+   Create a `.env` file in the root directory based on `.env.example`.
+
+5. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+   The application will be accessible at `http://localhost:3000`.
+
+---
+
 ---
 
 
