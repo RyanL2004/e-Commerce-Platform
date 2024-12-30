@@ -67,8 +67,8 @@ Experience the platform firsthand: [e-Commerce Platform Live Demo](https://ryanl
 ---
 
 ## 📂 Project Structure
---- 
 
+```
 e-Commerce-Platform/
 ├── api/               # Backend API folder
 │   ├── controllers/   # Route controllers for request handling
@@ -92,5 +92,6 @@ e-Commerce-Platform/
 ```
 
 ---
+
 
 
