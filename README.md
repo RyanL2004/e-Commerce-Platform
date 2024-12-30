@@ -1,4 +1,4 @@
-# 🛒 Modern e-Commerce Platform
+# 🛒 IBI e-Commerce Platform
 
 **Modern e-Commerce Platform** is a cutting-edge, full-stack e-commerce application designed to provide a seamless shopping experience. Built with scalability, performance, and user-friendliness in mind, it integrates modern technologies to deliver an outstanding user experience.
 
