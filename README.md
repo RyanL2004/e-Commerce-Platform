@@ -143,6 +143,35 @@ Stay tuned for updates!
 
 ---
 
+## 🤝 Contributing
+
+We welcome contributions to enhance the project! To contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch**:
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. **Commit your changes**:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. **Push to the branch**:
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+5. **Open a Pull Request**.
+
+Please ensure your code adheres to our coding standards and includes relevant tests.
+
+---
+
+## 🌟 Code of Conduct
+
+We expect all participants to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md). Please read it to understand the standards of behavior we expect from our community.
+
+---
+
 
 
 
