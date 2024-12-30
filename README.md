@@ -37,4 +37,33 @@ Experience the platform firsthand: [e-Commerce Platform Live Demo](https://ryanl
 
 ---
 
+## 🖥️ Technologies Used
+
+### **Frontend**
+
+- [React](https://reactjs.org/): JavaScript library for building user interfaces.
+- [Redux](https://redux.js.org/): State management for predictable application behavior.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): Core programming language of the web.
+- [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for styling.
+
+### **Backend**
+
+- [Node.js](https://nodejs.org/): JavaScript runtime for building scalable network applications.
+- [Express](https://expressjs.com/): Minimalist web framework for Node.js.
+- [MongoDB](https://www.mongodb.com/): NoSQL database for flexible and scalable data storage.
+- [Mongoose](https://mongoosejs.com/): ODM library for MongoDB and Node.js.
+
+### **Build Tools**
+
+- [Webpack](https://webpack.js.org/): Module bundler for modern JavaScript applications.
+- [Babel](https://babeljs.io/): JavaScript compiler to use the latest features.
+
+### **Other Tools & Services**
+
+- [Stripe](https://stripe.com/): Payment processing API.
+- [JWT](https://jwt.io/): Secure user authentication and session management.
+- [Postman](https://www.postman.com/): API development and testing.
+
+---
+
 
