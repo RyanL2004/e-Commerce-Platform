@@ -172,6 +172,30 @@ We expect all participants to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md
 
 ---
 
+## 🛡️ Security Policy
+
+To report security vulnerabilities, please contact us directly at **securityecommerce@gmail.com**. Your report will be handled with the utmost confidentiality, and we will work to address issues promptly.
+
+---
+
+## 🛡️ License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 📧 Contact
+
+For any questions or suggestions, feel free to reach out:
+
+- **GitHub Issues**: [Create an issue](https://github.com/RyanL2004/e-Commerce-Platform/issues)
+- **Email**: rayanlouahche2004@gmail.com
+- **LinkedIn**: [Rayan's Profile](https://www.linkedin.com/in/rayan-louahche/)
+
+---
+
+Thank you for checking out **Modern e-Commerce Platform**! Your feedback and contributions are highly valued.
+
 
 
 
