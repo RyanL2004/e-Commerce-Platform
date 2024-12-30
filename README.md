@@ -118,7 +118,32 @@ To set up the project locally:
 
 ---
 
+## 🧪 Running Tests
+
+To execute tests:
+
+```bash
+npm test
+```
+
 ---
+
+## 🚧 Current Status
+
+### In Progress
+
+We are actively working on:
+
+- Enhancing the admin panel for better control.
+- Improving performance and SEO.
+- Adding multi-language support.
+- Integrating advanced analytics for better insights.
+
+Stay tuned for updates!
+
+---
+
+
 
 
 
