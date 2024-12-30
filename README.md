@@ -24,3 +24,17 @@ Experience the platform firsthand: [e-Commerce Platform Live Demo](https://ryanl
 10. [License](#-license)
 11. [Contact](#-contact)
 
+## 🛠️ Features
+
+- **User Authentication**: Secure login and registration.
+- **Product Catalog**: Explore a wide variety of products.
+- **Search & Filter**: Easily find products with advanced search and filter options.
+- **Shopping Cart**: Add, update, and remove items from the cart.
+- **Order Management**: Track and manage orders efficiently.
+- **Admin Panel**: Manage products, categories, and user roles.
+- **Responsive Design**: Seamless experience across devices.
+- **Payment Integration**: Secure and easy payments.
+
+---
+
+
