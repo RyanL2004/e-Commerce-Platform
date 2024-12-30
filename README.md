@@ -66,4 +66,31 @@ Experience the platform firsthand: [e-Commerce Platform Live Demo](https://ryanl
 
 ---
 
+## 📂 Project Structure
+--- 
+
+e-Commerce-Platform/
+├── api/               # Backend API folder
+│   ├── controllers/   # Route controllers for request handling
+│   ├── models/        # Mongoose models for MongoDB
+│   ├── routes/        # API route definitions
+│   ├── middleware/    # Custom middleware functions
+│   ├── utils/         # Utility functions
+│   └── server.js      # Entry point for the backend server
+├── public/            # Static assets
+├── src/               # Source code for the frontend
+│   ├── components/    # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── redux/         # Redux setup and slices
+│   ├── App.jsx        # Main application component
+│   └── index.jsx      # Entry point for React
+├── .env.example       # Environment variables example
+├── .gitignore         # Git ignore file
+├── package.json       # Project dependencies and scripts
+├── README.md          # Project documentation
+└── webpack.config.js  # Webpack configuration
+```
+
+---
+
 
