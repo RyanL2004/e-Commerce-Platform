@@ -30,7 +30,7 @@ export const productListAction = () => async (dispatch) => {
 export const productAction = (id) => async (dispatch) => {
     try {
         dispatch({type: PRODUCT_DETAIL_REQ});
-        const {data} = await axios.get(`${BASE_URL}/api/product/${id}`);
+        const {data} = await axios.get(`${BASE_URL}/api/products/${id}`);
         dispatch({type: PRODUCT_DETAIL_REQ_SUCCESS, payload: data});
     } catch (error) {
         dispatch({

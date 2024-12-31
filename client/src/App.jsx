@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />}>{console.log(App)}</Route>
-          <Route exact path="/detail" element={<ProductDetail />}></Route>
+          <Route exact path="/products/:id" element={<ProductDetail />}></Route>
         </Routes>
       </Router>
 

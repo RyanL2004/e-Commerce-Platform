@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const User = require('./models/User');
 const users = require('./data/Users');
-const products = require('./data/Products');
+const products = require('./data/Products').default;
 const Product = require('./models/product');
 const AsynHandler = require('express-async-handler');
 

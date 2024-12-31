@@ -45,7 +45,7 @@ const Products = () => {
                                     {product.name}
                                   </Link>
                                 </h3>
-                                <p className="mt-1 text-sm text-gray-500">
+                                <p className="mt-1 text-sm text-gray-500" style={{ textAlign: 'left' }}>
                                   Reviews : {product.numReview}
                                 </p>
                               </div>
