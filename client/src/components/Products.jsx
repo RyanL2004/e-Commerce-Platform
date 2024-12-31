@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { productListAction } from "../Redux/Actions/Product";
+import { Link } from "react-router-dom"
 
 const Products = () => {
   const dispatch = useDispatch();
   const productListReducer = useSelector((state) => state.productListReducer);
-  const { loading, products = [], page, totalPages, error } = productListReducer;
+  const { loading, products = [], error } = productListReducer;
 
   useEffect(() => {
     dispatch(productListAction());
@@ -36,20 +37,20 @@ const Products = () => {
                             <div className="mt-4 flex justify-between">
                               <div>
                                 <h3 className="text-sm text-gray-700">
-                                  <a href="#">
+                                  <Link to={`/products/${product._id}`}>
                                     <span
                                       aria-hidden="true"
                                       className="absolute inset-0"
                                     ></span>
-                                    Basic Tee
-                                  </a>
+                                    {product.name}
+                                  </Link>
                                 </h3>
                                 <p className="mt-1 text-sm text-gray-500">
-                                  Black
+                                  Reviews : {product.numReview}
                                 </p>
                               </div>
                               <p className="text-sm font-medium text-gray-900">
-                                $35
+                               ${product.price}
                               </p>
                             </div>
                           </div>
