@@ -5,7 +5,7 @@ import { productListAction } from "../Redux/Actions/Product";
 const Products = () => {
   const dispatch = useDispatch();
   const productListReducer = useSelector((state) => state.productListReducer);
-  const { loading, products, page, totalPages, error } = productListReducer;
+  const { loading, products = [], page, totalPages, error } = productListReducer;
 
   useEffect(() => {
     dispatch(productListAction());
