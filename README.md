@@ -198,6 +198,6 @@ Thank you for checking out **Modern e-Commerce Platform**! Your feedback and con
 
 
 
-🎇 Kicking off 2025 with updates to my Repo ! new features, new goals ,same passion! #HappyNewYear #HappyCoding 
+🎇 Kicking off 2025 with updates to my Repo ! new features, new goals ,same passion! #HappyNewYear
 
 
