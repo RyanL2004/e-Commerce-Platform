@@ -4,7 +4,7 @@ export function Login() {
   return (
     <>
       <Layout>
-        <form className="max-w-sm mx-auto">
+        <form className="max-w-sm mx-auto h-5/6">
           <div className="mb-5">
             <label
               for="email"

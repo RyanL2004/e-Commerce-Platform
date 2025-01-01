@@ -3,7 +3,6 @@ import { useState } from "react";
 import Layout from "./Layouts/Layouts";
 import Products from "./components/Products";
 */
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductDetail from './pages/ProductDetail';
 import Home from './pages/Home';
