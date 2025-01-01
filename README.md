@@ -103,18 +103,24 @@ To set up the project locally:
    ```bash
    cd e-Commerce-Platform
    ```
-3. **Install dependencies**:
+3. **Install React**:
    ```bash
    npm install
    ```
-4. **Set up environment variables**:
+4. **Install Necessary third party libraries & dependencies**:
+    ```bash
+   npm install bcryptjs dotenv express express-async-handler jsonwebtoken mongoose morgan concurrently nodemon
+   ```
+5. **Set up environment variables**:
    Create a `.env` file in the root directory based on `.env.example`.
 
-5. **Start the development server**:
+6. **Start the development server**:
    ```bash
    npm run dev
    ```
    The application will be accessible at `http://localhost:3000`.
+
+   
 
 ---
 
