@@ -180,7 +180,7 @@ We expect all participants to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md
 
 ## 🛡️ Security Policy
 
-To report security vulnerabilities, please contact us directly at **securityecommerce@gmail.com**. Your report will be handled with the utmost confidentiality, and we will work to address issues promptly.
+To report security vulnerabilities, please contact us directly at **IBIsecurity@gmail.com**. Your report will be handled with the utmost confidentiality, and we will work to address issues promptly.
 
 ---
 
