@@ -48,9 +48,9 @@ export const userLogoutAction = () => async (dispatch) => {
 //register
 export const userRegisterAction = (name, email, password) => async (dispatch) => {
     try {
-        dispatch({USER_REGISTER_REQ});
+        dispatch({type: USER_REGISTER_REQ});
         const config = {
-            header: {
+            headers: {
                 "Content-Type": "application/json",
             }
         }
