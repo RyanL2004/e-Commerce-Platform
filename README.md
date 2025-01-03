@@ -1,6 +1,6 @@
 # 🛒 IBI e-Commerce Platform
 
-**Modern e-Commerce Platform** is a cutting-edge, full-stack e-commerce application designed to provide a seamless shopping experience. Built with scalability, performance, and user-friendliness in mind, it integrates modern technologies to deliver an outstanding user experience.
+**IBI** is a cutting-edge, full-stack e-commerce application designed to provide a seamless shopping experience. Built with scalability, performance, and user-friendliness in mind, it integrates modern technologies to deliver an outstanding user experience.
 
 ---
 
@@ -103,18 +103,24 @@ To set up the project locally:
    ```bash
    cd e-Commerce-Platform
    ```
-3. **Install dependencies**:
+3. **Install React**:
    ```bash
    npm install
    ```
-4. **Set up environment variables**:
+4. **Install Necessary third party libraries & dependencies**:
+    ```bash
+   npm install bcryptjs dotenv express express-async-handler jsonwebtoken mongoose morgan concurrently nodemon
+   ```
+5. **Set up environment variables**:
    Create a `.env` file in the root directory based on `.env.example`.
 
-5. **Start the development server**:
+6. **Start the development server**:
    ```bash
    npm run dev
    ```
    The application will be accessible at `http://localhost:3000`.
+
+   
 
 ---
 
@@ -174,7 +180,7 @@ We expect all participants to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md
 
 ## 🛡️ Security Policy
 
-To report security vulnerabilities, please contact us directly at **securityecommerce@gmail.com**. Your report will be handled with the utmost confidentiality, and we will work to address issues promptly.
+To report security vulnerabilities, please contact us directly at **IBIsecurity@gmail.com**. Your report will be handled with the utmost confidentiality, and we will work to address issues promptly.
 
 ---
 
