@@ -22,8 +22,9 @@ function App() {
           <Route exact path="/products/:id" element={<ProductDetail />}></Route>
           <Route exact path="/login" element={userInfo ? <Navigate to="/"/> : <Login /> }></Route>
           <Route exact path="/register" element={userInfo? <Navigate to="/"/> : <Register />}></Route>
-          <Route exact path="/checkout" element={<Checkout />}></Route>
+          
         </Routes>
+        <Checkout />
       </Router>
 
       {/*
