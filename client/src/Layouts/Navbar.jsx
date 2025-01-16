@@ -5,25 +5,24 @@ import { Link } from "react-router-dom";
 import { userLogoutAction } from "../Redux/Actions/User";
 
 const Navbar = () => {
-  
   const userLoginReducer = useSelector((state) => state.userLoginReducer);
   const { userInfo } = userLoginReducer;
   const dispatch = useDispatch();
 
- 
-
-
-
+  // Safely calculate total quantity with proper checks
+  const { cartItems = [] } = useSelector((state) => state.cartReducer || {});
+  const totalQty = cartItems.reduce((total, item) => total + (Number(item?.qty) || 0), 0);
 
   const logoutHandler = () => {
     dispatch(userLogoutAction());
   };
+
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a
-            href="https://flowbite.com/"
+          <Link
+            to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
@@ -32,9 +31,9 @@ const Navbar = () => {
               alt="Flowbite Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              IBI{" "}
+              IBI
             </span>
-          </a>
+          </Link>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             {!userInfo ? (
               <Link
@@ -45,13 +44,10 @@ const Navbar = () => {
               </Link>
             ) : (
               <>
-                <UserDropDown logoutHandler={logoutHandler}> </UserDropDown>
-                <button
-                  data-collapse-toggle="navbar-cta"
-                  type="button"
-                  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                  aria-controls="navbar-cta"
-                  aria-expanded="false"
+                <UserDropDown logoutHandler={logoutHandler} />
+                <Link
+                  to="/cart"
+                  className="relative inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +63,12 @@ const Navbar = () => {
                       d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                     />
                   </svg>
-                  
-                </button>
+                  {totalQty > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                      {totalQty}
+                    </span>
+                  )}
+                </Link>
               </>
             )}
 
@@ -103,13 +103,13 @@ const Navbar = () => {
           >
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
                   aria-current="page"
                 >
                   Home
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

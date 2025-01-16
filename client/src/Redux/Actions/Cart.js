@@ -10,41 +10,49 @@ import {
 
 import { BASE_URL } from '../Constants/BASE_URL';
 
-export const addToCartAction = (id,qty) => async (dispatch, getState) => {
+export const addToCartAction = (id, qty = 1) => async (dispatch, getState) => {
     try {
-        const {data} = await axios.get(`${BASE_URL}/api/products/${id}`);
+        if (!id) {
+            throw new Error('Product ID is required');
+        }
+
+        // Fetch product data
+        const { data } = await axios.get(`${BASE_URL}/api/products/${id}`);
+        
+        if (!data || !data._id) {
+            throw new Error('Invalid product data received');
+        }
+
+        // Prepare cart item with explicit property checks
+        const cartItem = {
+            product: data._id || id,
+            name: data.name || 'Unknown Product',
+            image: data.image || '',
+            price: parseFloat(data.price) || 0,
+            countInStock: parseInt(data.countInStock) || 0,
+            qty: parseInt(qty) || 1
+        };
+
+        // Log the cart item for debugging
+        console.log('Adding to cart:', cartItem);
+
+        // Dispatch the action
         dispatch({
             type: ADD_ITEM_TO_CART,
-            payload: {
-                product: data._id,
-                name: data.name,
-                image: data.image,
-                price: data.price,
-                countInStock: data.countInStock,
-                qty,
-            }
-        })
+            payload: cartItem
+        });
 
-        const cartItems = getState().cartReducer.cartItems
-        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+        // Update localStorage
+        const { cartReducer } = getState();
+        if (cartReducer && cartReducer.cartItems) {
+            localStorage.setItem('cartItems', JSON.stringify(cartReducer.cartItems));
+        }
 
-
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        // You might want to dispatch an error action here
     }
-    catch (error) {
-        console.error(error);
-    }
-
-
-}
-
-export const removeFromCartAction = (id) => (dispatch, getState) => {
-    dispatch({
-        type: REMOVE_ITEM_FROM_CART,
-        payload: id,
-
-    })
-    localStorage.setItem("cartItems", JS0N.stringify(getState().cart.cartItems) )
-}
+};
 
 export const saveShippingAddressAction = (data) => (dispatch, getState) => {
     dispatch ({

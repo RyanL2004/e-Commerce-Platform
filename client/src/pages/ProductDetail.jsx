@@ -8,17 +8,33 @@ import { addToCartAction } from "../Redux/Actions/Cart";
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const [qty, setQty] = useState(1);
+
   const productReducer = useSelector((state) => state.productReducer);
   const { loading, error, product } = productReducer;
 
   useEffect(() => {
-    dispatch(productAction(id));
+    if (id) {
+      dispatch(productAction(id));
+    }
   }, [dispatch, id]);
 
-  const [ qty, setQty ] = useState(1);
   const addToCartHandler = () => {
-    dispatch(addToCartAction(id, qty));
+    if (!id) {
+      console.error('No product ID available');
+      return;
+    }
+    
+    // Convert qty to number and ensure it's at least 1
+    const quantity = Math.max(1, parseInt(qty) || 1);
+    
+    console.log('Adding to cart:', { id, quantity }); // Debug log
+    dispatch(addToCartAction(id, quantity));
   };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!product) return <div>No product found</div>;
 
   return (
     <Layout>
@@ -170,7 +186,7 @@ const ProductDetail = () => {
                         <div className="relative" bis_skin_checked="1">
                           <select
                             value={qty}
-                            onChange={(e) => setQty(parseInt(e.target.value))}
+                            onChange={(e) => setQty(Number(e.target.value))}
                             className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10"
                           >
                             {[...Array(product.countInStock).keys()].map(
