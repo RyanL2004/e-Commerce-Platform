@@ -3,7 +3,7 @@ import axios from 'axios';
 import {
     ADD_ITEM_TO_CART,
     REMOVE_ITEM_FROM_CART,
-    
+    TOGGLE_CART_VISIBILITY,
     CART_SAVE_SHIPPING_ADDRESS,
     SAVE_PAYMENT_METHOD,
 } from '../Constants/Cart';
@@ -69,6 +69,12 @@ export const savePaymentMethod = (data) => (dispatch, getState) => {
     })
     localStorage.setItem("paymentMethod", JSON.stringify(data))
 }
+export const toggleCart = (isOpen) => (dispatch) => {
+    dispatch({
+        type: TOGGLE_CART_VISIBILITY,
+        payload: isOpen,
+    });
+};
 
 
 

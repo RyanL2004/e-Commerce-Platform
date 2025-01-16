@@ -4,15 +4,23 @@ import {
     REMOVE_ITEM_FROM_CART,
     CART_SAVE_SHIPPING_ADDRESS,
     SAVE_PAYMENT_METHOD,
+    TOGGLE_CART_VISIBILITY
 } from '../Constants/Cart';
 
 const initialState = {
     cartItems: [],
-    shippingAddress: {}
+    shippingAddress: {},
+    isCartOpen: false
 };
 
 export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
+        case TOGGLE_CART_VISIBILITY: {
+            return {
+                ...state,
+                isCartOpen: action.payload
+            };
+        }
         case ADD_ITEM_TO_CART: {
             // Early return if payload is invalid
             if (!action.payload || !action.payload.product) {
