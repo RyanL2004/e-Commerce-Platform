@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
     "axios": "^1.7.9",
     "client": "file:",
     "flowbite": "^2.5.2",

@@ -8,6 +8,7 @@ import ProductDetail from './pages/ProductDetail';
 import Home from './pages/Home';
 import { Login } from "./pages/Auth/Login";
 import { Register } from "./pages/Auth/Register";
+import Checkout from "./pages/Checkout";
 import { useSelector } from "react-redux";
 function App() {
   const userLoginReducer = useSelector((state) => state.userLoginReducer)
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/products/:id" element={<ProductDetail />}></Route>
           <Route exact path="/login" element={userInfo ? <Navigate to="/"/> : <Login /> }></Route>
           <Route exact path="/register" element={userInfo? <Navigate to="/"/> : <Register />}></Route>
+          <Route exact path="/checkout" element={<Checkout />}></Route>
         </Routes>
       </Router>
 
