@@ -4,7 +4,9 @@ import {
     REMOVE_ITEM_FROM_CART,
     CART_SAVE_SHIPPING_ADDRESS,
     SAVE_PAYMENT_METHOD,
-    TOGGLE_CART_VISIBILITY
+    TOGGLE_CART_VISIBILITY,
+    UPDATE_CART_ITEM_QTY
+    
 } from '../Constants/Cart';
 
 const initialState = {
@@ -20,6 +22,17 @@ export const cartReducer = (state = initialState, action) => {
                 ...state,
                 isCartOpen: action.payload
             };
+        }
+        case UPDATE_CART_ITEM_QTY: {
+            return {
+                ...state,
+                cartItems: state.cartItems.map(item => 
+                    item.product === action.payload.id
+                    ? { ...item, qty: action.payload.qty}
+                    : item
+                )
+            }
+
         }
         case ADD_ITEM_TO_CART: {
             // Early return if payload is invalid

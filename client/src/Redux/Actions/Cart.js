@@ -4,8 +4,10 @@ import {
     ADD_ITEM_TO_CART,
     REMOVE_ITEM_FROM_CART,
     TOGGLE_CART_VISIBILITY,
+    UPDATE_CART_ITEM_QTY,
     CART_SAVE_SHIPPING_ADDRESS,
     SAVE_PAYMENT_METHOD,
+
 } from '../Constants/Cart';
 
 import { BASE_URL } from '../Constants/BASE_URL';
@@ -75,6 +77,16 @@ export const toggleCart = (isOpen) => (dispatch) => {
         payload: isOpen,
     });
 };
+
+export const updateCartItemQty = (id, qty) => (dispatch, getState) => {
+    dispatch({
+        type: UPDATE_CART_ITEM_QTY,
+        payload: {
+            id,
+            qty
+        }
+    });
+} 
 
 
 
