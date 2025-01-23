@@ -10,6 +10,7 @@ import { Login } from "./pages/Auth/Login";
 import { Register } from "./pages/Auth/Register";
 import Checkout from "./pages/Checkout";
 import { useSelector } from "react-redux";
+import PlaceOrder from "./pages/Auth/PlaceOrder";
 function App() {
   const userLoginReducer = useSelector((state) => state.userLoginReducer)
   const { userInfo } = userLoginReducer
@@ -22,7 +23,8 @@ function App() {
           <Route exact path="/products/:id" element={<ProductDetail />}></Route>
           <Route exact path="/login" element={userInfo ? <Navigate to="/"/> : <Login /> }></Route>
           <Route exact path="/register" element={userInfo? <Navigate to="/"/> : <Register />}></Route>
-          
+          <Route exact path="/checkout" element={<Checkout />}></Route>
+          <Route exact path="/placeorder" element={<PlaceOrder />}></Route>
         </Routes>
         <Checkout />
       </Router>
