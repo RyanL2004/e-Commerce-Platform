@@ -1,8 +1,9 @@
 import { useSelector} from "react-redux";
-import { toggleCart, updateCartItemQty } from "../Redux/Actions/Cart";
+import { toggleCart } from "../Redux/Actions/Cart";
 import { X } from "lucide-react";
 import { Link } from "react-router-dom";
 import CartItem from "./Auth/CartItems";
+import { useDispatch } from "react-redux";
 
 
 export default function Checkout() {
@@ -22,7 +23,7 @@ export default function Checkout() {
     (total, item) => total + (item?.price || 0) * (item?.qty || 0),
     0
   );
-
+  const dispatch = useDispatch();
   return (
     <div className="fixed inset-0 overflow-hidden z-50">
       <div className="absolute inset-0 overflow-hidden">
