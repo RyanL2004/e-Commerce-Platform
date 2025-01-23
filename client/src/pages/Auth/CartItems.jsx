@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { updateCartItemQty } from "../../Redux/Actions/Cart";
 export default function CartItem({cartItems}) {
 
     const dispatch = useDispatch();
