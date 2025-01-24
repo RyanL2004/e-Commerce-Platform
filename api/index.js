@@ -37,6 +37,11 @@ app.use('/api/products', productRoute);
 //Orders Routes
 app.use('/api/orders', orderRoute);
 
+// Paypal payments :
+app.use("/api/config/paypal", (req, res) => {
+  //API for client key:
+  res.send(process.env.PAYPAL_CLIENT_ID);
+})
 
 
 //Connect to Port
@@ -44,7 +49,4 @@ app.listen(PORT, () => {
   console.log(`server listening on port ${PORT}`);
 });
 
-// Test Product route
-// app.get("/api/products", (req, res) => {
-//   res.json(products);
-// });
+
