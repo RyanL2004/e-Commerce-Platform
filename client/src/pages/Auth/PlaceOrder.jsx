@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import CartItem from "../Auth/CartItems";
 import { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { BASE_URL } from "../../Redux/Constants/BASE_URL";
 export default function PlaceOrder() {
   const cart = useSelector((state) => state.cartReducer);
   const { cartItems, shippingAddress } = cart;
@@ -30,6 +31,20 @@ export default function PlaceOrder() {
   const [city, setCity] = useState(shippingAddress.city);
   const [address, setAddress] = useState(shippingAddress.address);
   const [postCode, setPostCode] = useState(shippingAddress.postCode);
+
+  const [clientId, setClientId] = useState(null);
+
+
+  const getPaypalClientId = async () =>{
+    const res = await axios.get(`${BASE_URL}/api/config/paypal`);
+    const fetchedClientId = res.data;
+    setClientId(fetchedClientId);
+  }
+
+  useEffect(()=> {
+    getPaypalClientId()
+  }
+  )
 
   return (
     <>
@@ -135,12 +150,14 @@ export default function PlaceOrder() {
                     className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   ></input>
                 </div>
-                <PayPalScriptProvider options={{ clientId: "test" }}>
-                    <PayPalButtons
-                    //createOrder={createOrder}
-                    //onApprove={onApprove}
-                    />
-                  </PayPalScriptProvider>
+                {cliendId &&(
+                  <PayPalScriptProvider options={{ clientId: "test" }}>
+                  <PayPalButtons
+                  //createOrder={createOrder}
+                  //onApprove={onApprove}
+                  />
+                </PayPalScriptProvider>
+                )}
               </div>
             </div>
           </div>
