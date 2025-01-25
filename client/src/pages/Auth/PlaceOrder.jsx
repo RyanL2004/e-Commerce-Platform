@@ -69,7 +69,9 @@ export default function PlaceOrder() {
         })
       );
       if (response.payload) {
+        dispatch({ type: CLEAR_CART });
         navigate(`/order/${response.payload._id}`)
+
       }
     } catch (err) {
       console.log(err);

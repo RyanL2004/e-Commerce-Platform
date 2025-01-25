@@ -5,8 +5,8 @@ import {
     CART_SAVE_SHIPPING_ADDRESS,
     SAVE_PAYMENT_METHOD,
     TOGGLE_CART_VISIBILITY,
-    UPDATE_CART_ITEM_QTY
-    
+    UPDATE_CART_ITEM_QTY,
+    CLEAR_CART,
 } from '../Constants/Cart';
 
 const initialState = {
@@ -75,6 +75,11 @@ export const cartReducer = (state = initialState, action) => {
                 ...state,
                 cartItems: state.cartItems.filter(item => item && item.product !== action.payload)
             };
+        case CLEAR_CART:
+            return {
+                ...state,
+                cartItems: [],
+            }
 
         case CART_SAVE_SHIPPING_ADDRESS:
             return {
