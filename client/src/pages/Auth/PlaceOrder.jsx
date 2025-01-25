@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { orderAction } from "../../Redux/Actions/Order";
 import axios from "axios";
 import { saveShippingAddressAction } from "../../Redux/Actions/Cart";
-
+import { useNavigate } from "react-router-dom";
 
 export default function PlaceOrder() {
   const cart = useSelector((state) => state.cartReducer);
@@ -52,11 +52,12 @@ export default function PlaceOrder() {
   });
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const successPaymentHandler = async (paymentResult) => {
     try {
       setPaymentResult(paymentResult);
-      dispatch(
+      const response = await dispatch(
         orderAction({
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,
@@ -67,6 +68,9 @@ export default function PlaceOrder() {
           shippingPrice: shippingPrice,
         })
       );
+      if (response.payload) {
+        navigate("/order/:id")
+      }
     } catch (err) {
       console.log(err);
     }

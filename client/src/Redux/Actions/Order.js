@@ -43,6 +43,7 @@ export const orderAction = (order) => async (dispatch, getState) => {
         dispatch({ type: ORDER_SUCCESS, payload: data});
         dispatch({ type: CLEAR_CART, payload: data});
 
+        return { payload: data };
     } catch (error) {
         console.log(error);
     }
