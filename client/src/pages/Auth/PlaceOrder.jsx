@@ -69,7 +69,7 @@ export default function PlaceOrder() {
         })
       );
       if (response.payload) {
-        navigate("/order/:id")
+        navigate(`/order/${response.payload._id}`)
       }
     } catch (err) {
       console.log(err);

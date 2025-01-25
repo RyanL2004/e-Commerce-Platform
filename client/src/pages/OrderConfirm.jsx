@@ -4,9 +4,7 @@ import Layout from "../Layouts/Layouts";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { orderDetailAction } from "../Redux/Actions/Order";
-// import { useParams } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { orderDetailAction } from "../Redux/Actions/Order";
+
 
 const OrderConfirmation = () => {
 
@@ -15,6 +13,8 @@ const OrderConfirmation = () => {
   useEffect(() => {
     dispatch(orderDetailAction(id));
   }, [dispatch, id])
+  console.log("Order ID:", id);
+
   
   const orderDetailReducer = useSelector((state)=>state.orderDetailReducer)
   const { order, loading } = orderDetailReducer;

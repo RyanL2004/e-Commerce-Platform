@@ -68,7 +68,8 @@ orderRoute.get('/', protect, asyncHandler(async(req, res) => {
 
 }))
 orderRoute.get('/:id', protect,asyncHandler(async(req, res)=>{
-    const order = await Order.findById(req.params.id).populate("user", "email");
+    const order = await Order.findById(req.params.id).populate("user", "name email");
+    console.log("populated Order:", order);
     if(order){
         res.status(200).json(order);
     }else{
