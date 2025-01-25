@@ -80,7 +80,7 @@ export const orderPaymentReducer = (state = {}, action) => {
     }
 }
 
-export const orderListReducer = (state = {orders: {}}, action) => {
+export const orderListReducer = (state = {orders: []}, action) => {
     switch (action.type){
         case ORDER_LIST_REQ:
         return {
