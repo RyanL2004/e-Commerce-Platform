@@ -16,13 +16,15 @@ export default function Checkout() {
       }
   );
 
-  if (!isCartOpen) return null;
-
-  // Calculate total only if there are items
   const totalAmount = cartItems?.reduce(
     (total, item) => total + (item?.price || 0) * (item?.qty || 0),
     0
   );
+  
+  if (!isCartOpen) return null;
+
+  // Calculate total only if there are items
+
   const dispatch = useDispatch();
   return (
     <div className="fixed inset-0 overflow-hidden z-50">
