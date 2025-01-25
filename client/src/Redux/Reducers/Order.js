@@ -94,6 +94,7 @@ export const orderListReducer = (state = {orders: {}}, action) => {
             return {
                 loading: false, error: action.payload
             }
-        default: state
+        default:
+            return state
     }
 }
