@@ -122,7 +122,7 @@ export const orderPaymentAction = (orderId, paymentResult) => async (dispatch, g
 
 export const orderListAction = () => async (dispatch, getState) => {
     try {
-        dispatch({ ORDER_LIST_REQ});
+        dispatch({type: ORDER_LIST_REQ});
         const userInfo = getState().userLoginReducer.userInfo;
 
         const config = {
@@ -134,7 +134,7 @@ export const orderListAction = () => async (dispatch, getState) => {
             `${BASE_URL}/api/orders`,
             config
         )
-        dispatch({ ORDER_LIST_REQ_SUCCESS, payload: data});
+        dispatch({ type: ORDER_LIST_REQ_SUCCESS, payload: data});
 
     } catch (error) {
         const message = error.response && error.response.data.message
@@ -144,7 +144,7 @@ export const orderListAction = () => async (dispatch, getState) => {
             dispatch(userLogoutAction());
 
         }
-        dispatch({ ORDER_LIST_REQ_FAIL, payload: message});
+        dispatch({ type: ORDER_LIST_REQ_FAIL, payload: message});
     }
 
 }
