@@ -9,6 +9,7 @@ import { orderAction } from "../../Redux/Actions/Order";
 import axios from "axios";
 import { saveShippingAddressAction } from "../../Redux/Actions/Cart";
 import { useNavigate } from "react-router-dom";
+import { CLEAR_CART } from "../../Redux/Constants/Cart";
 
 export default function PlaceOrder() {
   const cart = useSelector((state) => state.cartReducer);
