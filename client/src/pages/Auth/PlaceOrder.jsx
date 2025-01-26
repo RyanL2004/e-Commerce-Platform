@@ -10,6 +10,7 @@ import axios from "axios";
 import { saveShippingAddressAction } from "../../Redux/Actions/Cart";
 import { useNavigate } from "react-router-dom";
 import { CLEAR_CART } from "../../Redux/Constants/Cart";
+import { orderPaymentAction } from "../../Redux/Actions/Order";
 
 export default function PlaceOrder() {
   const cart = useSelector((state) => state.cartReducer);
@@ -57,27 +58,36 @@ export default function PlaceOrder() {
 
   const successPaymentHandler = async (paymentResult) => {
     try {
-      setPaymentResult(paymentResult);
-      const response = await dispatch(
-        orderAction({
-          orderItems: cart.cartItems,
-          shippingAddress: cart.shippingAddress,
-          totalPrice: total,
-          paymentMethod: "paypal",
-          price: subtotal,
-          taxPrice: taxPrice,
-          shippingPrice: shippingPrice,
-        })
-      );
-      if (response.payload) {
-        dispatch({ type: CLEAR_CART });
-        navigate(`/order/${response.payload._id}`)
+        console.log("Payment Captured:", paymentResult);
 
-      }
-    } catch (err) {
-      console.log(err);
+        // Step 1: Create the order
+        const createdOrder = await dispatch(
+            orderAction({
+                orderItems: cart.cartItems,
+                shippingAddress: cart.shippingAddress,
+                totalPrice: total,
+                paymentMethod: "paypal",
+                price: subtotal,
+                taxPrice: taxPrice,
+                shippingPrice: shippingPrice,
+            })
+        );
+
+        if (createdOrder.payload) {
+            const orderId = createdOrder.payload._id;
+
+            // Step 2: Update payment status
+            await dispatch(orderPaymentAction(orderId, paymentResult));
+
+            // Step 3: Redirect and clear cart
+            navigate(`/order/${orderId}`);
+            dispatch({ type: CLEAR_CART });
+        }
+    } catch (error) {
+        console.error("Error in successPaymentHandler:", error);
     }
-  };
+};
+
 
   const saveShippingAddress = () => {
     dispatch(
