@@ -6,7 +6,7 @@
 
 ## 🚀 Live Demo
 
-Experience the platform firsthand: [e-Commerce Platform Live Demo](https://ryanl2004.github.io/e-Commerce-Platform/) -- Project still under development 
+Experience the platform firsthand: [IBI Live Demo](https://ibi-seven.vercel.app/) -- Project still under development 
 
 ---
 
