@@ -1,4 +1,4 @@
-export default function Loading() {
+const Loading = () => {
   return (
     <>
       <div role="status" className="flex items-center justify-center">
@@ -23,3 +23,5 @@ export default function Loading() {
     </>
   );
 }
+
+export default Loading;
