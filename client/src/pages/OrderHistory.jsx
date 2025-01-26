@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import Layout from "../Layouts/Layouts";
 import { useSelector } from "react-redux";
 import moment from "moment";
-import Loading from "../components/Loading";
+import Loading from "./Loading";
 
 export default function OrderHistory() {
   const dispatch = useDispatch();
