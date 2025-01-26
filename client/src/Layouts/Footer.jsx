@@ -16,10 +16,10 @@ const Footer = () => {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://flowbite.com/" className="hover:underline">React</a>
+                                    <a href="https://react.dev/" className="hover:underline">React</a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" className="hover:underline">Node</a>
+                                    <a href="https://nodejs.org/en" className="hover:underline">Node</a>
                                 </li>
                             </ul>
                         </div>
@@ -27,10 +27,10 @@ const Footer = () => {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow me</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://github.com/themesberg/flowbite" className="hover:underline">Github</a>
+                                    <a href="https://github.com/RyanL2004" className="hover:underline">Github</a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
+                                    <a href="https://www.linkedin.com/in/rayan-louahche/" className="hover:underline">LinkeldIn</a>
                                 </li>
                             </ul>
                         </div>
