@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { productListAction } from "../Redux/Actions/Product";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -13,58 +13,58 @@ const Products = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="bg-gray-100 py-10 min-h-screen">
       {loading ? (
-        <h1>loading</h1>
+        <h1 className="text-center text-blue-500 text-xl font-semibold">
+          Loading...
+        </h1>
       ) : error ? (
-        <h1>{error}</h1>
+        <h1 className="text-center text-red-500 text-xl font-semibold">
+          {error}
+        </h1>
       ) : (
-        <>
-          <section className="text-gray-600 body-font">
-            <div className="container px-5 py-24 mx-auto">
-              <div className="flex flex-wrap -m-4">
-                {products.map((product) => (
-                  <div className="p-4 lg:w-1/4 md:w-1/2" key={product.id}>
-                    <div className="bg-white">
-                      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                        <div className="mt-6 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                          <div className="group relative">
-                            <img
-                              src={product.image}
-                              alt="Front of men's Basic Tee in black."
-                              className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
-                            />
-                            <div className="mt-4 flex justify-between">
-                              <div>
-                                <h3 className="text-sm text-gray-700">
-                                  <Link to={`/products/${product._id}`}>
-                                    <span
-                                      aria-hidden="true"
-                                      className="absolute inset-0"
-                                    ></span>
-                                    {product.name}
-                                  </Link>
-                                </h3>
-                                <p className="mt-1 text-sm text-gray-500" style={{ textAlign: 'left' }}>
-                                  Reviews : {product.numReview}
-                                </p>
-                              </div>
-                              <p className="text-sm font-medium text-gray-900">
-                               ${product.price}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+        <section className="container mx-auto px-5">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            Our Products
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {products.map((product) => (
+              <Link
+                to={`/products/${product._id}`}
+                key={product._id}
+                className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              >
+                {/* Product Image */}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-60 object-cover rounded-t-lg"
+                />
+
+                {/* Product Info */}
+                <div className="p-4">
+                  <h3 className="text-lg font-medium text-gray-800 truncate">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Reviews: {product.numReview}
+                  </p>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-xl font-bold text-gray-900">
+                      ${product.price}
+                    </span>
+                    <span className="text-blue-500 hover:underline text-sm font-medium">
+                      Learn More
+                    </span>
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
     </div>
   );
 };
+
 export default Products;
